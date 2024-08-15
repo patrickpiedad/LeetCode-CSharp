@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LeetCode_CSharp
 {
-    internal class HouseRobber
+    public class HouseRobber
     {
-        static int MaxMoney(int[] houseMonies, int n)
+        public static int MaxMoney(int[] houseMonies, int n)
         {
             if (n == 0)
             {

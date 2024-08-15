@@ -9,12 +9,11 @@ namespace LeetCode_CSharp
 {
     internal class LongestCommonPrefix
     {
-        public string LongestCommonPrefixMethod(string[] strs)
-        {
-            foreach(string element in strs)
-            {
+        //public string LongestCommonPrefixMethod(string[] strs)
+        //{
+        //    {
                 
-            }
-        }
+        //    }
+        //}
     }
 }
