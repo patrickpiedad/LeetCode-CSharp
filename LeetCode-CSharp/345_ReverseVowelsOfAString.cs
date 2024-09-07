@@ -1,6 +1,6 @@
 namespace LeetCode_CSharp;
 
-public class Solution {
+public class ReverseVowelsOfAStringSolution {
 
     public string ReverseVowels(string s)
     {
