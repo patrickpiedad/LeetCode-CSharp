@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode_CSharp
 {
-    public class FindPivotIndexSolution
+    public class FindPivotIndexSolution1
     {
         public int PivotIndex(int[] nums)
         {
@@ -66,6 +66,35 @@ namespace LeetCode_CSharp
 
             }
 
+            return -1;
+        }
+    }
+
+    public class FindPivotIndexSolution2
+    {
+        public int PivotIndex(int[] nums)
+        {
+            // Find total sum using for loop
+            // Execute another for loop, find left sum by adding until pivot index, then right sum by doing totalsum - pivot index - left sum
+
+            int pivotIndex = 0;
+            int totalSum = 0;
+            int leftSum = 0;
+
+            for (int i = 0; i <= nums.Length - 1; i++)
+            {
+                totalSum += nums[i];
+            }
+
+            for (int i = 0; i <= nums.Length - 1; i++)
+            {
+                pivotIndex = i;
+                if (leftSum == totalSum - leftSum - nums[i])
+                {
+                    return i;
+                }
+                leftSum += nums[i];
+            }
             return -1;
         }
     }
