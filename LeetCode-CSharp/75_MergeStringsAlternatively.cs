@@ -43,5 +43,54 @@ namespace LeetCode_CSharp
             return builder.ToString();
         }
 
+        public static string MergeString2(string word1, string word2)
+        {
+            // I'm being given two strings, word1 and word 2
+            // I need to merge them together alternatively. If one ends before the other, just keep adding the rest of the longer word to the new string. I need to start with word1
+
+            // Are my strings ever going to be null?
+            // Are my strings ever going to be empty?
+            // Are my strings ever going to be 1x letter long
+
+            // Create a stringbuilder to make the new string
+            StringBuilder builder = new StringBuilder();
+            string longestWord = "";
+            string shortestWord = "";
+
+            // Find longest and shortest word
+            if (word1.Length >= word2.Length)
+            {
+                longestWord = word1;
+                shortestWord = word2;
+            }
+
+            else
+            {
+                longestWord = word2;
+                shortestWord = word1;
+            }
+
+            // for loop that iterates through the longest string length
+            for (int i = 0; i <= longestWord.Length - 1; i++)
+            {
+                if (i <= shortestWord.Length -1)
+                {
+                    builder.Append(word1[i]);
+                    builder.Append(word2[i]);
+                }
+
+                else
+                {
+                    builder.Append(longestWord[i]);
+                }
+            }
+
+            return builder.ToString();
+
+            // conditional to append both strings alternatively as long as both strings have letters remaining
+            // stringbuilder append word1[i], then append word2[i]
+            // else, only append longest stringbuilder
+        }
+
     }
 }
