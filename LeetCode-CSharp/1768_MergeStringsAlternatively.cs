@@ -92,5 +92,34 @@ namespace LeetCode_CSharp
             // else, only append longest stringbuilder
         }
 
+        public string MergeAlternately(string word1, string word2)
+        {
+            // Using two pointer approach with while loop
+            // We will continue while loop as long as we are within the length of one of the strings
+            // If conditionals to determine if we're appending from two strings or just one
+
+            int pointer1 = 0;
+            int pointer2 = 0;
+
+            StringBuilder ans = new StringBuilder();
+
+            while (pointer1 <= word1.Length -1 || pointer2 <= word2.Length -1)
+            {
+                if (pointer1 <= word1.Length -1)
+                {
+                    ans.Append(word1[pointer1]);
+                    pointer1++;
+                }
+
+                if (pointer2 <= word2.Length -1)
+                {
+                    ans.Append(word2[pointer2]);
+                    pointer2++;
+                }
+            }
+
+            return ans.ToString();
+        }
+
     }
 }
