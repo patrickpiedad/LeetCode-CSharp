@@ -57,5 +57,51 @@ namespace LeetCode_CSharp
 
             return answer;
         }
+
+        public string ReverseWords2(string s)
+        {
+            Stack<string> stack = new();
+            StringBuilder builder = new();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] != ' ')
+                {
+                    builder.Append(s[i]);
+                }
+
+                else
+                {
+                    if (builder.Length > 0)
+                    {
+                        stack.Push(builder.ToString());
+                        builder.Clear();
+                    }
+                }
+
+            }
+            if (builder.Length > 0)
+            {
+                stack.Push(builder.ToString());
+                builder.Clear();
+            }
+
+            StringBuilder answer = new();
+
+            while (stack.Count > 0)
+            {
+                if (stack.Count > 1)
+                {
+                    answer.Append(stack.Pop());
+                    answer.Append(' ');
+                }
+                else
+                {
+                    answer.Append(stack.Pop());
+                }
+            }
+
+            return answer.ToString();
+        }
     }
 }
