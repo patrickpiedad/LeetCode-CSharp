@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode-CSharp", "LeetCode-CSharp\LeetCode-CSharp.csproj", "{5714ABF5-D20E-4D9D-82DE-8F28F655E8F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksAPI", "BooksAPI\BooksAPI.csproj", "{EFD05952-809F-46B9-B3C7-29BA0E5598EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5714ABF5-D20E-4D9D-82DE-8F28F655E8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5714ABF5-D20E-4D9D-82DE-8F28F655E8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5714ABF5-D20E-4D9D-82DE-8F28F655E8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD05952-809F-46B9-B3C7-29BA0E5598EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD05952-809F-46B9-B3C7-29BA0E5598EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD05952-809F-46B9-B3C7-29BA0E5598EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD05952-809F-46B9-B3C7-29BA0E5598EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
