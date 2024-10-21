@@ -11,12 +11,12 @@ public class BooksController : Controller
         new Book { Id = 2, Title = "Cracking the Coding Interview 2", Author = "Gayle McDowell", Description = "190 Programming Questions and Solutions"}
         
     };
-    
+
     // GET (READ)
-    [HttpGet ("{Id}")]
-    public IActionResult GetBook(int id)
+    [HttpGet("{Id}")]
+    public IActionResult GetBook(int Id)
     {
-        var book = books.FirstOrDefault(b => b.Id == id);
+        var book = books.FirstOrDefault(b => b.Id == Id);
         if (book == null)
         {
             return NotFound();
