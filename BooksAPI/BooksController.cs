@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
 namespace Web_API;
 
@@ -50,15 +51,29 @@ public class BooksController : Controller
         return NoContent();
     }
     
-    // DELETE (DELETE)
-    [HttpDelete("{id}")]
-    public IActionResult DeleteBook(int id)
+    // // DELETE (DELETE)
+    // [HttpDelete("{id}")]
+    // public IActionResult DeleteBook(int id)
+    // {
+    //     var book = books.FirstOrDefault(b => b.Id == id);
+    //     if (book == null)
+    //     {
+    //         return NotFound();
+    //     }
+    //     books.Remove(book);
+    //     return NoContent();
+    // }
+    
+    // DELETE
+    [HttpDelete("{Id}")]
+    public IActionResult DeleteBook(int Id)
     {
-        var book = books.FirstOrDefault(b => b.Id == id);
+        var book = books.FirstOrDefault(c => c.Id == Id);
         if (book == null)
         {
             return NotFound();
         }
+
         books.Remove(book);
         return NoContent();
     }
