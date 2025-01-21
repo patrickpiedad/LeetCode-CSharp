@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace LeetCode_CSharp
 {
-    internal class _75_MergeStringsAlternatively
+    public class _1768_MergeStringsAlternately
     {
         public static string StringMerge(string word1, string word2)
         {
@@ -92,34 +88,48 @@ namespace LeetCode_CSharp
             // else, only append longest stringbuilder
         }
 
-        public string MergeAlternately(string word1, string word2)
+        public string Merge3(string word1, string word2)
         {
-            // Using two pointer approach with while loop
-            // We will continue while loop as long as we are within the length of one of the strings
-            // If conditionals to determine if we're appending from two strings or just one
+            // R: Take in two strings and merge strings by adding letters in alternating order starting with word 1. If one word is longer than the other, append the rest of the letters onto the end of the merged string.
+            // E: abc, pqr =? apbqcr // ab, pqrs => apbqrs
+            // A: find shortWord and shortWordLength, find longWord and longWordLength, initialize ans
+            // loop through for longWordLength with conditional of only appending from shortWord while less than shortWordLength, else append longWord
+            // ab pqrs --> 4x loop from 0 to length of longWord, adding 1x letter from each word during each iteration
+            // C:
 
-            int pointer1 = 0;
-            int pointer2 = 0;
-
-            StringBuilder ans = new StringBuilder();
-
-            while (pointer1 <= word1.Length -1 || pointer2 <= word2.Length -1)
+            string shortWord = "";
+            string longWord = "";
+            
+            if (word1.Length <= word2.Length)
             {
-                if (pointer1 <= word1.Length -1)
-                {
-                    ans.Append(word1[pointer1]);
-                    pointer1++;
-                }
+                shortWord = word1;
+                longWord = word2;
+            }
 
-                if (pointer2 <= word2.Length -1)
+            else
+            {
+                shortWord = word2;
+                longWord = word1;
+            }
+
+            StringBuilder answer = new StringBuilder();
+            
+            for (int i = 0; i < longWord.Length; i++)
+            {
+                
+                if (i < shortWord.Length)
                 {
-                    ans.Append(word2[pointer2]);
-                    pointer2++;
+                    answer.Append(word1[i]);
+                    answer.Append(word2[i]);
+                }
+                else
+                {
+                    answer.Append(longWord[i]);
                 }
             }
 
-            return ans.ToString();
-        }
+            return answer.ToString();
 
+        }
     }
 }
