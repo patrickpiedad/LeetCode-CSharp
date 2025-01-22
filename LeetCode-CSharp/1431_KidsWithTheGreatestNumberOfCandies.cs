@@ -53,3 +53,40 @@ public class KidsWithTheGreatestNumberOfCandies {
         return ansList;
     }
 }
+
+public class KidWithGreatestNumberOfCandies2
+{
+    //R: Taking in array of candies and number of extra candies, calculate return array of bool values based on whether extra candies given to each array value will make that value the largest in the array
+    //E: candies = [2, 3, 5, 1, 3], extraCandies = 3 => [true, true, true, false, true]
+    //A: find max of array to set originalMaxCandies value
+    // iterate through array and add to compare to originalMaxCandies and produce bool value, return bool array
+    //C:
+    public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
+        int originalMaxCandies = candies[0];
+        IList<bool> answer = new List<bool>();
+
+        for (int i = 0; i < candies.Length; i++)
+        {
+            if (candies[i] > originalMaxCandies)
+            {
+                originalMaxCandies = candies[i];
+            }
+        }
+
+        for (int i = 0; i < candies.Length; i++)
+        {
+            if ((candies[i] + extraCandies) >= originalMaxCandies)
+            {
+                answer.Add(true);
+            }
+            else
+            {
+                answer.Add(false);
+            }
+        }
+
+        return answer;
+    }
+    //T: test cases passed in LC
+    //O: currently O(N)
+}
