@@ -10,7 +10,7 @@ namespace LeetCode_CSharp
             Console.WriteLine("This program will run your desired LeetCode solution");
             Console.WriteLine("Output from your LeetCode solution begins below:");
             Console.WriteLine("----------------------------------------------------------------");
-            bool answer = CanPlaceFlowers.CanPlaceFlowers2([1, 0, 0, 0, 1, 0, 0], 2);
+            string answer = ReverseVowelsOfAStringSolution.ReverseVowels2("IceCreAm");
             Console.WriteLine(answer); 
             Console.ReadLine();
 
