@@ -10,9 +10,7 @@ namespace LeetCode_CSharp
             Console.WriteLine("This program will run your desired LeetCode solution");
             Console.WriteLine("Output from your LeetCode solution begins below:");
             Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine(ReverseWordsInAString.ReverseWords2("the sky is blue"));
-            Console.WriteLine(ReverseWordsInAString.ReverseWords2("  hello world  "));
-            Console.WriteLine(ReverseWordsInAString.ReverseWords2("a good  example"));
+            Console.WriteLine(ProductofArrayExceptSelf.ProductExceptSelf3([1,2,3,4]));
             Console.ReadLine();
 
         }
