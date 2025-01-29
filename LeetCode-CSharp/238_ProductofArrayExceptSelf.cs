@@ -86,5 +86,73 @@
 
             return res;
         }
+        
+        public static int[] ProductExceptSelf4(int[] nums) {
+        //[1,2,3,4]           [1,2,3,4]                =>          [24,12,8,6]
+        //[1,1,2,6] prefix , [24,12,4,1]
+        //O(N)/O(N) time/space complexity
+        //Make prefix array, postfix array, then multiply together to create answer
+        //Prefix => first pass from left to right to calculate prefix of each position where the prefix for each position is in the space directly before it
+        //prefix[0] is nothing because there is are no values "pre" the 0th position, so place 1 there to stay neutral in products
+        //postfix[postfix.Length-1] is nothing because there is are no values "post" the last position, so place 1 there to stay neutral in products
+
+        int[] prefix = new int[nums.Length];
+        prefix[0] = 1;
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            prefix[i] = prefix[i-1] * nums[i-1];
+        }
+
+        int[] postfix = new int[nums.Length];
+        postfix[postfix.Length - 1] = 1;
+
+        for (int i = postfix.Length - 2; i >= 0; i--)
+        {
+            postfix[i] = postfix[i + 1] * nums[i + 1];
+        }
+
+        int[] answer = new int[nums.Length];
+
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = prefix[i] * postfix[i];
+        }
+
+        return answer;
+
+        }
+        
+        public static int[] ProductExceptSelf5(int[] nums) {
+            //[1,2,3,4] => [24,12,8,6]
+            //[24,12,8,6], current = 24
+            //O(N)/O(1) time/space complexity
+            //create answer array and fill with 1s to stay neutral
+            //initiate curr integer value to track what needs to be multiplied
+            //calculate prefix in answer array with each prefix value being to the right of the index value
+            //calculate postfix in answer array and place in proper index value
+
+            int[] answer = new int[nums.Length];
+            int current = 1;
+
+            Array.Fill(answer, 1);
+
+            for (int i = 1; i < answer.Length; i++)
+            {
+                answer[i] *= current;
+                current = answer[i] * nums[i];
+            }
+
+            current = 1;
+
+            for (int i = answer.Length - 1; i >= 0; i--)
+            {
+                answer[i] *= current;
+                current *= nums[i];
+            }
+
+            return answer;
+
+        }
     }
 }
