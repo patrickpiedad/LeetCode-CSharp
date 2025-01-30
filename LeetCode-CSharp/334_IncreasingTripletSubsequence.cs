@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LeetCode_CSharp
+﻿namespace LeetCode_CSharp
 {
-    internal class IncreasingTripletSubsequence
+    public static class IncreasingTripletSubsequence
     {
 
         public static bool IncreasingTriplet(int[] nums)
@@ -49,7 +43,7 @@ namespace LeetCode_CSharp
             return false;
         }
 
-        public bool IncreasingTriplet3(int[] nums)
+        public static bool IncreasingTriplet3(int[] nums)
         {
             // check each number and compare to first and second
             // first and second start at max value
@@ -69,6 +63,36 @@ namespace LeetCode_CSharp
                 else return true;
             }
 
+            return false;
+        }
+        
+        public static bool IncreasingTriplet4(int[] nums) {
+        
+            //R: input array nums, return true if there are three values in a row that increase in value, else return false
+            //E: [1,2,3,4,5] => true, [5,4,3,2,1] => false, [2,1,5,0,4,6] => true because [...0,4,6]
+            //[20,100,10,12,5,13]
+            //A/C: 
+            
+            // init min1 value to track first minimum value requirement
+            int min1 = Int32.MaxValue;
+
+            // init min2 value to track second minimum value requirement
+            int min2 = Int32.MaxValue;
+            
+            // loop through array
+            for (int i = 0; i < nums.Length; i++)
+            {
+                // min1 is set if found
+                if (nums[i] <= min1) min1 = nums[i];
+                
+                // min2 is set if found
+                else if (nums[i] <= min2) min2 = nums[i];
+                
+                // if nums[i] is not <= min1 or min2, then that means it is larger than min1 or min2, and we have found our third increasing number in the triplet
+                else return true;
+            }
+
+            // if loop completes, no triplet is found, return false
             return false;
         }
     }
