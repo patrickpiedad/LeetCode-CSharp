@@ -95,5 +95,26 @@
             // if loop completes, no triplet is found, return false
             return false;
         }
+        
+        public static bool IncreasingTriplet5(int[] nums) {
+        
+            //R: check if given array nums has increasing triplet subsequence, where subsequence does not need to be consecutive numbers or indices
+            //E: [1,2,3,4,5] => true; [2,5,1,0,6] => true
+            //A: keep track of min numbers by have two min number variables tracked, update when hitting those numbers, if something larger than second min number exists, return true, else false
+            //C:
+
+            int min1 = Int32.MaxValue;
+            int min2 = Int32.MaxValue;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] <= min1) min1 = nums[i];
+                else if (nums[i] <= min2) min2 = nums[i];
+                else if (nums[i] > min2) return true;
+            }
+
+            return false;
+        }
+        
     }
 }
