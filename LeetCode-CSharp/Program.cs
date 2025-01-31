@@ -10,8 +10,9 @@ namespace LeetCode_CSharp
             Console.WriteLine("This program will run your desired LeetCode solution");
             Console.WriteLine("Output from your LeetCode solution begins below:");
             Console.WriteLine("----------------------------------------------------------------");
-            Console.WriteLine(IncreasingTripletSubsequence.IncreasingTriplet4([1,2,3,4,5]));
-            Console.WriteLine(IncreasingTripletSubsequence.IncreasingTriplet4([20,100,10,12,5,13]));
+            Console.WriteLine(StringCompression.Compress(['a','a','b','b','c','c','c']));
+            Console.WriteLine(StringCompression.Compress(['a']));
+            Console.WriteLine(StringCompression.Compress(['a','b','b','b','b','b','b','b','b','b','b','b','b']));
             Console.ReadLine();
 
         }

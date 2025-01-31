@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace LeetCode_CSharp
 {
-    internal class StringCompression
+    public static class StringCompression
     {
-        public int Compress(char[] chars)
+        public static int Compress(char[] chars)
         {
 
             int currIndex = 0;
@@ -39,6 +35,5 @@ namespace LeetCode_CSharp
             }
             return currIndex;
         }
-
     }
 }
