@@ -104,5 +104,21 @@
             return false;
 
         }
+        
+        public static bool IncreasingTriplet6(int[] nums) {
+            int num1 = Int32.MaxValue;
+            int num2 = Int32.MaxValue;
+            
+            // [2,1,5,0,4,6]
+            
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] <= num1) num1 = nums[i];
+                else if (nums[i] <= num2) num2 = nums[i];
+                else if (nums[i] > num2) return true;
+            }
+
+            return false;
+        }
     }
 }
