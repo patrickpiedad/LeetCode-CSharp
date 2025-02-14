@@ -60,4 +60,22 @@ public static class MoveZeroes
             }
         }
     }
+    
+    public static void MoveZeroes3(int[] nums)
+    {
+        // pointer index always is set at a possible 0 value, BEFORE the current value;
+        int pointer = 0;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 0)
+            {
+                // [0,1,0,3,12]
+                int temp = nums[i];
+                nums[i] = nums[pointer];
+                nums[pointer] = temp;
+                pointer++;
+            }
+        }
+    }
 }
