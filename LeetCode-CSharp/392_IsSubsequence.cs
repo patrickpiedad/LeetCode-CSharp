@@ -1,7 +1,7 @@
 namespace LeetCode_CSharp;
 
-public class IsSubsequenceSolution {
-    public bool IsSubsequence(string s, string t) {
+public static class IsSubsequenceSolution {
+    public static bool IsSubsequence(string s, string t) {
         // Im going to receive a string s and t. S is the "to be tested" subsequence of t. If s IS a subsequence of t, return true, else false
         // abc is a subsequence of ahbgdc because you can delete hgd to create your new string s without any disruption
 
@@ -29,6 +29,26 @@ public class IsSubsequenceSolution {
             if (s[currentSIndex] == t[i])
             {
                 currentSIndex++;
+            }
+        }
+
+        return false;
+    }
+    
+    public static bool IsSubsequence2(string s, string t)
+    {
+
+        if (s.Length == 0) return true;
+
+        int sPointer = 0;
+
+        for (int i = 0; i < t.Length; i++)
+        {
+            if (s[sPointer] == t[i] && sPointer == s.Length - 1) return true;
+
+            else if (s[sPointer] == t[i])
+            {
+                sPointer++;
             }
         }
 
