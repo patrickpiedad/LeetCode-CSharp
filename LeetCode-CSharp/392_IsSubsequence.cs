@@ -54,4 +54,25 @@ public static class IsSubsequenceSolution {
 
         return false;
     }
+    
+    public static bool IsSubsequence3(string s, string t) {
+        // Input: s = "abc", t = "ahbgdc"
+        // Output: true
+
+        int pointer = 0;
+
+        if (s.Length == 0) return true;
+
+        for (int i = 0; i < t.Length; i++)
+        {
+            if (s[pointer] == t[i] && pointer == s.Length - 1) return true;
+            
+            if (s[pointer] == t[i])
+            {
+                pointer++;
+            }
+        }
+
+        return false;
+    }
 }
