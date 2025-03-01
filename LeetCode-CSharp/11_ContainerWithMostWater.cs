@@ -67,4 +67,22 @@ public static class ContainerWithMostWater {
 
         return maxArea;
     }
+    
+    public static int MaxArea4(int[] height)
+    {
+        int left = 0;
+        int right = height.Length - 1;
+        int maxArea = 0;
+
+        while (left < right)
+        {
+            int currentArea = Math.Min(height[left], height[right]) * (right - left);
+            maxArea = Math.Max(currentArea, maxArea);
+
+            if (height[left] < height[right]) left++;
+            else right--;
+        }
+
+        return maxArea;
+    }
 }
